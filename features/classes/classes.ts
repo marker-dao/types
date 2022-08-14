@@ -5,7 +5,6 @@ class Vehicle {
   /**
    * Props
    */
-  weight: number = 0
   // color: string
   /**
    * Constructor
@@ -72,16 +71,20 @@ privateCar.startWachingProcess() // it's working
  * protected - может быть вызван другими методами внутри того же класса или другими методами внутри класса-наследника
  */
 class ProtectedCar extends PrivateCar {
+  constructor (public weight: number, color: string) {
+    super(color)
+  }
+
   setCloseStatus () {
     this.close(true)
   }
 }
 
-const protectedCar = new ProtectedCar()
+const protectedCar = new ProtectedCar(0, 'green')
 
 protectedCar.setCloseStatus()
 // protectedCar.close() // but this don't working
 /**
  * Props
  */
-console.log(vehicle.color)
+console.log(protectedCar.color)
