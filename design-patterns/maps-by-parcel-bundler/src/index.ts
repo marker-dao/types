@@ -1,5 +1,7 @@
 import { User } from './User'
 import { Company } from './Company'
+import { GoogleMap } from './GoogleMap'
 
-console.log(new User())
-console.log(new Company())
+new User()
+new Company()
+new GoogleMap('map')
