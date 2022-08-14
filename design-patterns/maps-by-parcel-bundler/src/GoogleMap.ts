@@ -28,6 +28,14 @@ export class GoogleMap {
       }
     }
 
-    new google.maps.Marker(opts)
+    const marker = new google.maps.Marker(opts)
+
+    marker.addListener('click', () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: 'infoWindow'
+      })
+
+      infoWindow.open(this.googleMap, marker)
+    })
   }
 }
