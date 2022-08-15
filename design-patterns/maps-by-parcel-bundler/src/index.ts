@@ -6,5 +6,5 @@ const user = new User()
 const company = new Company()
 const googleMap = new GoogleMap('map')
 
-googleMap.addMarker(user.location)
-googleMap.addMarker(company.location)
+googleMap.addMarker(user)
+googleMap.addMarker(company)

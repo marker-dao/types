@@ -1,6 +1,10 @@
-interface Location {
-  lat: number
-  lng: number
+interface Mappable {
+  name: string
+  location: {
+    lat: number
+    lng: number
+  }
+  markerContent (): string
 }
 
 export class GoogleMap {
@@ -12,30 +16,30 @@ export class GoogleMap {
         lat: 0,
         lng: 0,
       },
-      zoom: 2,
+      zoom: 1,
     }
     const el = document.getElementById(elementId) as HTMLElement
 
     this.googleMap = new google.maps.Map(el, options)
   }
 
-  addMarker (location: Location): void {
+  addMarker (object: Mappable): void {
     const opts = {
       map: this.googleMap,
       position: {
-        lat: location.lat,
-        lng: location.lng,
+        lat: object.location.lat,
+        lng: object.location.lng,
       }
     }
 
     const marker = new google.maps.Marker(opts)
 
-    marker.addListener('click', () => {
-      const infoWindow = new google.maps.InfoWindow({
-        content: 'infoWindow'
-      })
+    marker.addListener('click', () => this.onClickMarker(object.markerContent(), marker))
+  }
 
-      infoWindow.open(this.googleMap, marker)
-    })
+  private onClickMarker (content: string, marker: google.maps.Marker): void {
+    const infoWindow = new google.maps.InfoWindow({ content })
+
+    infoWindow.open(this.googleMap, marker)
   }
 }
