@@ -4,7 +4,9 @@
   "description": "",
   "main": "./src/index.ts",
   "scripts": {
-    "dev": "tsc -w",
+    "dev": "concurrently yarn:start:*",
+    "start:build": "tsc -w",
+    "start:run": "nodemon dist/index.js",
     "build": "tsc"
   },
   "keywords": [
@@ -12,5 +14,9 @@
     "ts"
   ],
   "author": "marker dao",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19"
+  }
 }
