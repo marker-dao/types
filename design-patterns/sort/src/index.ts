@@ -1,3 +1,5 @@
-import { getSortedArray } from './utils'
+import { Sorter } from './utils' 
 
-console.log(getSortedArray([ 5, 0, 10, -1 ]))
+const sorter = new Sorter([4, -3, 11, 2])
+
+console.log(sorter.getSortedCollection())
