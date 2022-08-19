@@ -4,4 +4,4 @@ import { Sorter } from './utils'
 const numberCollection = new NumberCollection([4, -3, 11, 2])
 const sorter = new Sorter(numberCollection)
 
-console.log(sorter.getSortedCollection())
+console.log(sorter.sort())

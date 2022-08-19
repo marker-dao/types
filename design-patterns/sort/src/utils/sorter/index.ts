@@ -7,7 +7,7 @@ export class Sorter {
     this.collection = collection
   }
 
-  private sort (): number[] {
+  sort (): number[] {
     const { length } = this.collection
 
     for (let i = 0; i < length; i++) {
@@ -19,10 +19,6 @@ export class Sorter {
     }
 
     return this.collection.data
-  }
-
-  getSortedCollection (): number[] {
-    return this.sort()
   }
 }
  
