@@ -1,9 +1,9 @@
-import { Collection } from '../../interfaces/Collection'
+import { Sortable } from '../../interfaces/Sortable'
 
 export class Sorter {
-  private collection: Collection
+  private collection: Sortable
 
-  constructor (collection: Collection) {
+  constructor (collection: Sortable) {
     this.collection = collection
   }
 

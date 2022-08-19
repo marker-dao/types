@@ -1,6 +1,6 @@
-import { Collection } from '../../../interfaces/Collection'
+import { Sortable } from '../../../interfaces/Sortable'
 
-export class NumberCollection implements Collection {
+export class NumberCollection implements Sortable {
   /**
    * Number array
    */
