@@ -1,4 +1,6 @@
-export class NumberCollection {
+import { Collection } from '../../../interfaces/Collection'
+
+export class NumberCollection implements Collection {
   /**
    * Number array
    */

@@ -1,13 +1,13 @@
-import { NumberCollection } from '../collections/number-collection'
+import { Collection } from '../../interfaces/Collection'
 
 export class Sorter {
-  private collection: NumberCollection
+  private collection: Collection
 
-  constructor (collection: NumberCollection) {
+  constructor (collection: Collection) {
     this.collection = collection
   }
 
-  sort (): number[] {
+  sort (): void {
     const { length } = this.collection
 
     for (let i = 0; i < length; i++) {
@@ -17,8 +17,6 @@ export class Sorter {
         }
       }
     }
-
-    return this.collection.data
   }
 }
  
