@@ -1,5 +1,7 @@
+import { NumberCollection } from './utils/collections/number-collection'
 import { Sorter } from './utils' 
 
-const sorter = new Sorter([4, -3, 11, 2])
+const numberCollection = new NumberCollection([4, -3, 11, 2])
+const sorter = new Sorter(numberCollection)
 
 console.log(sorter.getSortedCollection())
