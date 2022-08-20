@@ -1,6 +1,6 @@
-import { Sortable } from '../../../interfaces/Sortable'
+import { Sorter } from '../../sorter'
 
-export class NumberCollection implements Sortable {
+export class NumberCollection extends Sorter {
   /**
    * Number array
    */
@@ -10,6 +10,8 @@ export class NumberCollection implements Sortable {
    * @param data - number array
    */
   constructor (data: number[]) {
+    super()
+    
     this.data = data
   }
   /**

@@ -1,22 +1,17 @@
-import { Sortable } from '../../interfaces/Sortable'
-
-export class Sorter {
-  private collection: Sortable
-
-  constructor (collection: Sortable) {
-    this.collection = collection
-  }
+export abstract class Sorter {
+  abstract length: number
+  abstract compare (a: number, b: number): boolean
+  abstract swap (a: number, b: number): void
 
   sort (): void {
-    const { length } = this.collection
+    const { length } = this
 
     for (let i = 0; i < length; i++) {
       for (let j = 0; j < length - i - 1; j++) {
-        if (this.collection.compare(j, j + 1)) {
-          this.collection.swap(j, j + 1)
+        if (this.compare(j, j + 1)) {
+          this.swap(j, j + 1)
         }
       }
     }
   }
 }
- 

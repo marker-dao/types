@@ -1,6 +1,6 @@
-import { Sortable } from '../../../interfaces/Sortable'
+import { Sorter } from '../../sorter' 
 
-export class CharacterCollection implements Sortable {
+export class CharacterCollection extends Sorter {
   /**
    * String
    */
@@ -10,6 +10,8 @@ export class CharacterCollection implements Sortable {
    * @param data - string
    */
   constructor (data: string) {
+    super()
+    
     this.data = data
   }
   /**
