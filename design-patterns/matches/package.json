@@ -1,0 +1,21 @@
+{
+  "name": "matches",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "concurrently yarn:start:*",
+    "start:build": "tsc -w",
+    "start:run": "nodemon dist/index.js",
+    "build": "tsc"
+  },
+  "keywords": [
+    "reusable"
+  ],
+  "author": "marker dao ®",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19"
+  }
+}
