@@ -1,12 +1,11 @@
 import { readFileSync } from 'fs'
+import { Matchable } from '../interfaces/Matchable'
 
 const file = readFileSync('public/football/football.csv', {
   encoding: 'utf-8',
 }).split('\n')
-/**
- * TODO. Убрать any
- */
-const data = file.reduce((acc: any[], item: string): any[] => {
+
+const data = file.reduce((acc: Matchable[], item: string): Matchable[] => {
   const element = item.split(',')
 
   acc.push({

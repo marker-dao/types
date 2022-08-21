@@ -1,10 +1,6 @@
 import { data } from './utils/data'
+import { Matchable } from './utils/interfaces/Matchable'
 
-interface Matchable {
-  home: string,
-  away: string,
-  winner: string,
-}
 /**
  * Total of Manchester United wins
  */
