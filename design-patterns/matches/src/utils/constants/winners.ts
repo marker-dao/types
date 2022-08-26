@@ -1,4 +1,5 @@
-export const winners = {
-  home: 'H',
-  away: 'A',
+export enum Winners {
+  Home = 'H',
+  Away = 'A',
+  Draw = 'D',
 }
